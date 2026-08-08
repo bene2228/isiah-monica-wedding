@@ -45,7 +45,6 @@
             align-items: center;
             text-align: center;
             padding: 3rem 1rem;
-            /* Overlay gradient + photo5.jpg */
             background: linear-gradient(180deg, rgba(224, 242, 254, 0.75) 0%, rgba(224, 242, 254, 0.88) 100%), url('photo5.jpg');
             background-size: cover;
             background-position: center;
@@ -137,10 +136,10 @@
             margin: 0 auto;
         }
 
-        /* Gallery Grid */
+        /* Gallery Grid (4 items) */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1.5rem;
         }
 
@@ -373,7 +372,7 @@
 </head>
 <body>
 
-    <!-- Header Section with Photo Background -->
+    <!-- Header Section -->
     <header class="hero">
         <p class="subtitle">We Are Getting Married</p>
         <h1 class="names">Isiah & Monica</h1>
@@ -387,7 +386,7 @@
         </div>
     </header>
 
-    <!-- Gallery Section -->
+    <!-- Gallery Section (4 Photos Only) -->
     <section class="section">
         <h2 class="section-title">Our Moments</h2>
         <p class="section-subtitle serif">A few memories from our journey together</p>
@@ -397,7 +396,6 @@
             <div class="gallery-item"><img src="photo2.jpg" alt="Isiah and Monica 2"></div>
             <div class="gallery-item"><img src="photo3.jpg" alt="Isiah and Monica 3"></div>
             <div class="gallery-item"><img src="photo4.jpg" alt="Isiah and Monica 4"></div>
-            <div class="gallery-item"><img src="photo5.jpg" alt="Isiah and Monica 5"></div>
         </div>
     </section>
 
@@ -500,12 +498,13 @@
                     </div>
 
                     <div class="form-group" id="guestCountGroup">
-                        <label for="guestCount">Number of Guests</label>
+                        <label for="guestCount">Number of Guests (Including Yourself)</label>
                         <select id="guestCount" name="guestCount">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
+                            <option value="5">5</option>
                         </select>
                     </div>
 
