@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation | Isiah & Monica</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #fdfbf7;
+            --accent-color: #8a7356;
+            --accent-hover: #6e5b43;
+            --text-dark: #2c2a29;
+            --text-muted: #6b6661;
+            --card-bg: #ffffff;
+            --border-color: #e8e2d9;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, .serif {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(rgba(253, 251, 247, 0.82), rgba(253, 251, 247, 0.82)), 
+                        url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .subtitle {
+            font-size: 0.95rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .names {
+            font-size: 3.8rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .date-location {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        /* Countdown Timer */
+        .countdown {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .time-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: var(--accent-color);
+        }
+
+        .label {
+            font-size: 0.7rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        /* Shared Section Layout */
+        .section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4.5rem 1.5rem;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+        }
+
+        .divider {
+            height: 1px;
+            background-color: var(--border-color);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Photo Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 8px;
+            aspect-ratio: 4/5;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            border: 1px solid var(--border-color);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Locations & Schedule */
+        .grid-two {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 2.5rem 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card h3 {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .card .time {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .btn-map {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.6rem 1.2rem;
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .btn-map:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        /* Attire Section */
+        .attire-card {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .attire-details {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+
+        .attire-column h4 {
+            font-size: 1rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .attire-column p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* RSVP Section */
+        .rsvp-bg {
+            background-color: #f7f3ed;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            background-color: #faf8f5;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            background-color: #ffffff;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .radio-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+            cursor: pointer;
+        }
+
+        .radio-label input {
+            width: auto;
+        }
+
+        button.btn-submit {
+            width: 100%;
+            padding: 1rem;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button.btn-submit:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .confirmation {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+            color: var(--accent-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2.5rem 1rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 600px) {
+            .names { font-size: 2.8rem; }
+            .countdown { gap: 0.8rem; }
+            .number { font-size: 1.6rem; }
+            .form-container { padding: 1.5rem; }
+            .attire-details { flex-direction: column; gap: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <p class="subtitle">We Are Getting Married</p>
+        <h1 class="names">Isiah & Monica</h1>
+        <p class="date-location">Saturday, September 19, 2026</p>
+        
+        <div class="countdown">
+            <div class="time-box"><span id="days" class="number">00</span><span class="label">Days</span></div>
+            <div class="time-box"><span id="hours" class="number">00</span><span class="label">Hours</span></div>
+            <div class="time-box"><span id="minutes" class="number">00</span><span class="label">Mins</span></div>
+            <div class="time-box"><span id="seconds" class="number">00</span><span class="label">Secs</span></div>
+        </div>
+    </header>
+
+    <!-- Photo Gallery Section -->
+    <section class="section">
+        <h2 class="section-title">Our Moments</h2>
+        <p class="section-subtitle serif">A few memories from our journey together</p>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80" alt="Isiah and Monica 1">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=800&q=80" alt="Isiah and Monica 2">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=800&q=80" alt="Isiah and Monica 3">
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Church & Reception Locations -->
+    <section class="section">
+        <h2 class="section-title">Schedule & Locations</h2>
+        <p class="section-subtitle serif">We look forward to celebrating with you</p>
+        
+        <div class="grid-two">
+            <!-- Church Location Card -->
+            <div class="card">
+                <div>
+                    <h3>Church Ceremony</h3>
+                    <p class="time">10:00 AM</p>
+                    <p><strong>Church Location</strong></p>
+                    <p>Click below for exact location and directions</p>
+                </div>
+                <div>
+                    <a href="https://maps.app.goo.gl/9ceS4WMsJ5xAWBZy8" target="_blank" rel="noopener noreferrer" class="btn-map">View Church Map</a>
+                </div>
+            </div>
+
+            <!-- Reception Location Card -->
+            <div class="card">
+                <div>
+                    <h3>Reception</h3>
+                    <p class="time">11:30 AM</p>
+                    <p><strong>Reception Venue</strong></p>
+                    <p>Click below for exact location and directions</p>
+                </div>
+                <div>
+                    <a href="https://maps.app.goo.gl/PAxqoELMbgDdp5es6" target="_blank" rel="noopener noreferrer" class="btn-map">View Reception Map</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Attire Guidelines Section -->
+    <section class="section">
+        <h2 class="section-title">Dress Code</h2>
+        <div class="attire-card">
+            <h3 class="serif" style="font-size: 2rem; color: var(--accent-color); margin-bottom: 0.5rem;">Formal Attire</h3>
+            <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">
+                We kindly request our guests to come in formal attire.
+            </p>
+
+            <div class="attire-details">
+                <div class="attire-column">
+                    <h4>Gentlemen</h4>
+                    <p>Barong Tagalog or Polo & Slacks</p>
+                </div>
+                <div class="attire-column">
+                    <h4>Ladies</h4>
+                    <p>Formal Dress / Cocktail Dress</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP Section -->
+    <div class="rsvp-bg">
+        <section class="section">
+            <h2 class="section-title">RSVP</h2>
+            <p class="section-subtitle serif">Please kindly respond by August 20, 2026</p>
+
+            <div class="form-container">
+                <form id="rsvpForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+                    <div class="form-group">
+                        <label for="fullName">Full Name(s)</label>
+                        <input type="text" id="fullName" name="fullName" required placeholder="e.g. Juan and Maria Dela Cruz">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required placeholder="juan@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Will you be attending?</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="attending" value="Joyfully Accepts" checked required onclick="toggleGuestCount(true)">
+                                Joyfully Accepts
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="attending" value="Regretfully Declines" onclick="toggleGuestCount(false)">
+                                Regretfully Declines
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="guestCountGroup">
+                        <label for="guestCount">Number of Guests</label>
+                        <select id="guestCount" name="guestCount">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dietary">Message for the Couple</label>
+                        <textarea id="dietary" name="dietary" rows="3" placeholder="Song requests, well wishes, or dietary restrictions..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Submit Response</button>
+                </form>
+
+                <div id="confirmationMessage" class="confirmation">
+                    <h3 class="serif" style="font-size: 2rem;">Thank You!</h3>
+                    <p>Your response has been successfully received.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p class="serif" style="font-size: 1.2rem; margin-bottom: 0.5rem;">Isiah & Monica</p>
+        <p>We can't wait to celebrate with you!</p>
+    </footer>
+
+    <script>
+        // Set Wedding Date: September 19, 2026, 10:00 AM
+        const weddingDate = new Date('2026-09-19T10:00:00').getTime();
+
+        // Countdown Timer
+        const timer = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            if (distance < 0) {
+                clearInterval(timer);
+                document.querySelector('.countdown').innerHTML = "<p class='serif' style='font-size:1.5rem;'>Today is the day!</p>";
+                return;
+            }
+
+            document.getElementById('days').innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+            document.getElementById('hours').innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById('minutes').innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById('seconds').innerText = Math.floor((distance % (1000 * 60)) / 1000);
+        }, 1000);
+
+        // Hide/Show Guest count
+        function toggleGuestCount(isAttending) {
+            const group = document.getElementById('guestCountGroup');
+            group.style.display = isAttending ? 'block' : 'none';
+        }
+
+        // Form submission demo handler
+        document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+            const form = e.target;
+            if (form.action.includes('YOUR_FORMSPREE_ID')) {
+                e.preventDefault();
+                form.style.display = 'none';
+                document.getElementById('confirmationMessage').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
