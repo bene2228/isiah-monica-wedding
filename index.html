@@ -6,16 +6,16 @@
     <title>Wedding Invitation | Isiah & Monica</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,400&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #f4f8fb;
-            --accent-color: #4a86e8;
-            --accent-hover: #2b62ba;
-            --text-dark: #1e293b;
-            --text-muted: #64748b;
-            --card-bg: #ffffff;
-            --border-color: #e2e8f0;
+            --sky-bg: #e0f2fe;          /* Soft Sky Blue Background */
+            --sky-card: #ffffff;        /* Clean White Cards */
+            --sky-accent: #0284c7;      /* Primary Sky Blue */
+            --sky-dark: #0c4a6e;        /* Deep Sky Blue for High Text Contrast */
+            --sky-border: #bae6fd;      /* Soft Blue Border */
+            --text-main: #0f172a;       /* Dark Text for Readability */
+            --text-muted: #334155;      /* Subtitle Dark Slate */
         }
 
         * {
@@ -26,57 +26,61 @@
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-dark);
+            background-color: var(--sky-bg);
+            color: var(--text-main);
             line-height: 1.6;
         }
 
         h1, h2, h3, .serif {
             font-family: 'Cormorant Garamond', serif;
-            font-weight: 400;
+            font-weight: 700;
         }
 
-        /* Hero Section */
+        /* Hero Header */
         .hero {
-            min-height: 85vh;
+            min-height: 80vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 2rem;
-            background: linear-gradient(rgba(244, 248, 251, 0.85), rgba(244, 248, 251, 0.85)), 
-                        url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-            border-bottom: 1px solid var(--border-color);
+            padding: 2.5rem 1rem;
+            background: linear-gradient(180deg, #bae6fd 0%, #e0f2fe 100%);
+            border-bottom: 2px solid var(--sky-border);
         }
 
         .subtitle {
-            font-size: 0.95rem;
+            font-size: 1rem;
             letter-spacing: 3px;
             text-transform: uppercase;
-            color: var(--accent-color);
-            margin-bottom: 1rem;
-            font-weight: 500;
+            color: var(--sky-accent);
+            font-weight: 700;
+            margin-bottom: 0.8rem;
         }
 
         .names {
             font-size: 3.8rem;
-            color: var(--text-dark);
-            margin-bottom: 1rem;
+            color: var(--sky-dark);
+            margin-bottom: 0.8rem;
             line-height: 1.1;
         }
 
         .date-location {
-            font-size: 1.15rem;
+            font-size: 1.2rem;
             color: var(--text-muted);
+            font-weight: 600;
             margin-bottom: 2rem;
         }
 
-        /* Countdown Timer */
+        /* Countdown */
         .countdown {
             display: flex;
-            gap: 1.5rem;
-            margin-top: 1rem;
+            gap: 1.2rem;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 1rem 1.8rem;
+            border-radius: 50px;
+            border: 1px solid var(--sky-border);
+            box-shadow: 0 4px 15px rgba(2, 132, 199, 0.1);
         }
 
         .time-box {
@@ -88,57 +92,60 @@
         .number {
             font-family: 'Cormorant Garamond', serif;
             font-size: 2.2rem;
-            font-weight: 600;
-            color: var(--accent-color);
+            font-weight: 700;
+            color: var(--sky-dark);
         }
 
         .label {
-            font-size: 0.7rem;
-            letter-spacing: 1.5px;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
             text-transform: uppercase;
-            color: var(--text-muted);
+            color: var(--sky-accent);
+            font-weight: 600;
         }
 
-        /* Shared Section Layout */
+        /* Section Settings */
         .section {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 4.5rem 1.5rem;
+            padding: 4rem 1.5rem;
             text-align: center;
         }
 
         .section-title {
-            font-size: 2.5rem;
-            color: var(--text-dark);
-            margin-bottom: 1rem;
+            font-size: 2.8rem;
+            color: var(--sky-dark);
+            margin-bottom: 0.5rem;
         }
 
         .section-subtitle {
             font-size: 1.2rem;
             color: var(--text-muted);
             margin-bottom: 2.5rem;
+            font-weight: 500;
         }
 
         .divider {
-            height: 1px;
-            background-color: var(--border-color);
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--sky-border), transparent);
             max-width: 800px;
             margin: 0 auto;
         }
 
-        /* Photo Gallery - Grid Layout for 5 Photos */
+        /* Gallery Grid */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.25rem;
+            gap: 1.5rem;
         }
 
         .gallery-item {
             overflow: hidden;
-            border-radius: 8px;
+            border-radius: 12px;
             aspect-ratio: 4/5;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
-            border: 1px solid var(--border-color);
+            box-shadow: 0 8px 20px rgba(2, 132, 199, 0.12);
+            border: 3px solid #ffffff;
+            background-color: #cbd5e1;
         }
 
         .gallery-item img {
@@ -152,7 +159,7 @@
             transform: scale(1.05);
         }
 
-        /* Locations & Schedule */
+        /* Cards Layout */
         .grid-two {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -160,61 +167,61 @@
         }
 
         .card {
-            background: var(--card-bg);
+            background: var(--sky-card);
             padding: 2.5rem 2rem;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            border-radius: 16px;
+            border: 2px solid var(--sky-border);
+            box-shadow: 0 10px 25px rgba(2, 132, 199, 0.08);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
         .card h3 {
-            font-size: 2rem;
-            color: var(--accent-color);
+            font-size: 2.2rem;
+            color: var(--sky-dark);
             margin-bottom: 0.5rem;
         }
 
         .card .time {
             font-size: 1.1rem;
-            font-weight: 500;
-            color: var(--text-dark);
-            margin-bottom: 1rem;
+            font-weight: 700;
+            color: var(--sky-accent);
+            margin-bottom: 0.8rem;
         }
 
         .card p {
             color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 0.3rem;
+            font-size: 1rem;
+            font-weight: 500;
         }
 
         .btn-map {
             display: inline-block;
             margin-top: 1.5rem;
-            padding: 0.6rem 1.2rem;
-            border: 1px solid var(--accent-color);
-            color: var(--accent-color);
+            padding: 0.75rem 1.5rem;
+            background-color: var(--sky-accent);
+            color: #ffffff;
             text-decoration: none;
-            border-radius: 4px;
-            font-size: 0.8rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
             letter-spacing: 1.5px;
             text-transform: uppercase;
+            font-weight: 600;
             transition: all 0.3s ease;
-            font-weight: 500;
         }
 
         .btn-map:hover {
-            background-color: var(--accent-color);
-            color: white;
+            background-color: var(--sky-dark);
         }
 
-        /* Attire Section */
+        /* Attire Box */
         .attire-card {
-            background: var(--card-bg);
+            background: var(--sky-card);
             padding: 2.5rem;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            border: 2px solid var(--sky-border);
+            box-shadow: 0 10px 25px rgba(2, 132, 199, 0.08);
         }
 
         .attire-details {
@@ -222,20 +229,20 @@
             justify-content: center;
             gap: 3rem;
             margin-top: 1.5rem;
-            text-align: center;
         }
 
         .attire-column h4 {
-            font-size: 1rem;
+            font-size: 1.1rem;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            color: var(--accent-color);
+            color: var(--sky-dark);
             margin-bottom: 0.5rem;
+            font-weight: 700;
         }
 
         .attire-column p {
             color: var(--text-muted);
-            font-size: 0.95rem;
+            font-weight: 500;
         }
 
         .color-palette {
@@ -246,26 +253,28 @@
         }
 
         .swatch {
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
-            border: 1px solid rgba(0,0,0,0.1);
+            border: 2px solid #ffffff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
         }
 
-        /* RSVP Section */
-        .rsvp-bg {
-            background-color: #eef6fc;
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
+        /* RSVP Form */
+        .rsvp-section {
+            background-color: #f0f9ff;
+            border-top: 2px solid var(--sky-border);
+            border-bottom: 2px solid var(--sky-border);
         }
 
         .form-container {
-            max-width: 600px;
+            max-width: 550px;
             margin: 0 auto;
-            background: var(--card-bg);
+            background: var(--sky-card);
             padding: 2.5rem;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            border: 2px solid var(--sky-border);
+            box-shadow: 0 10px 30px rgba(2, 132, 199, 0.1);
             text-align: left;
         }
 
@@ -279,23 +288,26 @@
             letter-spacing: 1px;
             text-transform: uppercase;
             margin-bottom: 0.5rem;
-            color: var(--text-dark);
+            color: var(--sky-dark);
+            font-weight: 700;
         }
 
         input, select, textarea {
             width: 100%;
-            padding: 0.8rem;
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
+            padding: 0.85rem;
+            border: 1px solid var(--sky-border);
+            border-radius: 8px;
             font-family: inherit;
-            font-size: 0.95rem;
+            font-size: 1rem;
             background-color: #f8fafc;
+            color: var(--text-main);
         }
 
         input:focus, select:focus, textarea:focus {
             outline: none;
-            border-color: var(--accent-color);
+            border-color: var(--sky-accent);
             background-color: #ffffff;
+            box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
         }
 
         .radio-group {
@@ -310,6 +322,8 @@
             gap: 0.5rem;
             font-size: 0.95rem;
             cursor: pointer;
+            color: var(--text-main);
+            font-weight: 600;
         }
 
         .radio-label input {
@@ -319,48 +333,42 @@
         button.btn-submit {
             width: 100%;
             padding: 1rem;
-            background-color: var(--accent-color);
+            background-color: var(--sky-accent);
             color: white;
             border: none;
-            border-radius: 4px;
+            border-radius: 8px;
             font-family: 'Montserrat', sans-serif;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             letter-spacing: 2px;
             text-transform: uppercase;
+            font-weight: 700;
             cursor: pointer;
             transition: background 0.3s;
         }
 
         button.btn-submit:hover {
-            background-color: var(--accent-hover);
-        }
-
-        .confirmation {
-            display: none;
-            text-align: center;
-            padding: 2rem;
-            color: var(--accent-color);
+            background-color: var(--sky-dark);
         }
 
         footer {
             text-align: center;
-            padding: 2.5rem 1rem;
-            font-size: 0.85rem;
+            padding: 3rem 1rem;
+            font-size: 0.9rem;
             color: var(--text-muted);
+            background-color: var(--sky-bg);
         }
 
         @media (max-width: 600px) {
             .names { font-size: 2.8rem; }
-            .countdown { gap: 0.8rem; }
-            .number { font-size: 1.6rem; }
-            .form-container { padding: 1.5rem; }
+            .countdown { gap: 0.6rem; padding: 0.8rem 1rem; }
+            .number { font-size: 1.5rem; }
             .attire-details { flex-direction: column; gap: 1.5rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Hero Section -->
+    <!-- Header Section -->
     <header class="hero">
         <p class="subtitle">We Are Getting Married</p>
         <h1 class="names">Isiah & Monica</h1>
@@ -374,58 +382,46 @@
         </div>
     </header>
 
-    <!-- Photo Gallery Section (5 Photos) -->
+    <!-- Gallery Section -->
     <section class="section">
         <h2 class="section-title">Our Moments</h2>
         <p class="section-subtitle serif">A few memories from our journey together</p>
         
         <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="photo1.jpg" alt="Isiah and Monica 1" onerror="this.src='https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80'">
-            </div>
-            <div class="gallery-item">
-                <img src="photo2.jpg" alt="Isiah and Monica 2" onerror="this.src='https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=800&q=80'">
-            </div>
-            <div class="gallery-item">
-                <img src="photo3.jpg" alt="Isiah and Monica 3" onerror="this.src='https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=800&q=80'">
-            </div>
-            <div class="gallery-item">
-                <img src="photo4.jpg" alt="Isiah and Monica 4" onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80'">
-            </div>
-            <div class="gallery-item">
-                <img src="photo5.jpg" alt="Isiah and Monica 5" onerror="this.src='https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=800&q=80'">
-            </div>
+            <div class="gallery-item"><img src="photo1.jpg" alt="Isiah and Monica 1"></div>
+            <div class="gallery-item"><img src="photo2.jpg" alt="Isiah and Monica 2"></div>
+            <div class="gallery-item"><img src="photo3.jpg" alt="Isiah and Monica 3"></div>
+            <div class="gallery-item"><img src="photo4.jpg" alt="Isiah and Monica 4"></div>
+            <div class="gallery-item"><img src="photo5.jpg" alt="Isiah and Monica 5"></div>
         </div>
     </section>
 
     <div class="divider"></div>
 
-    <!-- Church & Reception Locations -->
+    <!-- Location Section -->
     <section class="section">
         <h2 class="section-title">Schedule & Locations</h2>
         <p class="section-subtitle serif">We look forward to celebrating with you</p>
         
         <div class="grid-two">
-            <!-- Church Location Card -->
             <div class="card">
                 <div>
                     <h3>Church Ceremony</h3>
                     <p class="time">10:00 AM</p>
                     <p><strong>Church Location</strong></p>
-                    <p>Click below for exact location and directions</p>
+                    <p>Click below for directions and exact location</p>
                 </div>
                 <div>
                     <a href="https://maps.app.goo.gl/9ceS4WMsJ5xAWBZy8" target="_blank" rel="noopener noreferrer" class="btn-map">View Church Map</a>
                 </div>
             </div>
 
-            <!-- Reception Location Card -->
             <div class="card">
                 <div>
                     <h3>Reception</h3>
                     <p class="time">11:30 AM</p>
                     <p><strong>Reception Venue</strong></p>
-                    <p>Click below for exact location and directions</p>
+                    <p>Click below for directions and exact location</p>
                 </div>
                 <div>
                     <a href="https://maps.app.goo.gl/PAxqoELMbgDdp5es6" target="_blank" rel="noopener noreferrer" class="btn-map">View Reception Map</a>
@@ -436,13 +432,13 @@
 
     <div class="divider"></div>
 
-    <!-- Attire Guidelines Section -->
+    <!-- Dress Code Section -->
     <section class="section">
         <h2 class="section-title">Dress Code</h2>
         <div class="attire-card">
-            <h3 class="serif" style="font-size: 2rem; color: var(--accent-color); margin-bottom: 0.5rem;">Formal Attire</h3>
-            <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">
-                We kindly request our guests to come in formal attire following our motif.
+            <h3 class="serif" style="font-size: 2.2rem; color: var(--sky-dark); margin-bottom: 0.5rem;">Formal Attire</h3>
+            <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto; font-weight: 500;">
+                We kindly request our guests to come in formal attire following our Sky Blue motif.
             </p>
 
             <div class="attire-details">
@@ -456,27 +452,28 @@
                 </div>
             </div>
 
-            <p style="margin-top: 1.5rem; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; color: var(--text-dark);">Motif Color Palette</p>
+            <p style="margin-top: 1.8rem; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; color: var(--sky-dark); font-weight: 700;">Motif Color Palette</p>
             <div class="color-palette">
-                <div class="swatch" style="background-color: #87ceeb;" title="Sky Blue"></div>
-                <div class="swatch" style="background-color: #4a86e8;" title="Soft Blue"></div>
-                <div class="swatch" style="background-color: #2b62ba;" title="Dusty Blue"></div>
-                <div class="swatch" style="background-color: #e0f2fe;" title="Light Ice Blue"></div>
+                <div class="swatch" style="background-color: #e0f2fe;" title="Ice Blue"></div>
+                <div class="swatch" style="background-color: #7dd3fc;" title="Sky Blue"></div>
+                <div class="swatch" style="background-color: #0284c7;" title="Classic Sky Blue"></div>
+                <div class="swatch" style="background-color: #0c4a6e;" title="Deep Sky Blue"></div>
             </div>
         </div>
     </section>
 
     <!-- RSVP Section -->
-    <div class="rsvp-bg">
+    <div class="rsvp-section">
         <section class="section">
             <h2 class="section-title">RSVP</h2>
             <p class="section-subtitle serif">Please kindly respond until <strong>September 5, 2026</strong></p>
 
             <div class="form-container">
-                <form id="rsvpForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+                <!-- Direkta na ring nakakabit ang iyong Formspree Link -->
+                <form id="rsvpForm" action="https://formspree.io/f/mppaqdlz" method="POST">
                     <div class="form-group">
                         <label for="fullName">Full Name(s)</label>
-                        <input type="text" id="fullName" name="fullName" required placeholder="e.g. Juan and Maria Dela Cruz">
+                        <input type="text" id="fullName" name="fullName" required placeholder="e.g. Juan & Maria Dela Cruz">
                     </div>
 
                     <div class="form-group">
@@ -509,31 +506,24 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="dietary">Message for the Couple</label>
-                        <textarea id="dietary" name="dietary" rows="3" placeholder="Song requests, well wishes, or message for Isiah & Monica..."></textarea>
+                        <label for="message">Message for the Couple</label>
+                        <textarea id="message" name="message" rows="3" placeholder="Song requests, well wishes, or messages..."></textarea>
                     </div>
 
                     <button type="submit" class="btn-submit">Submit Response</button>
                 </form>
-
-                <div id="confirmationMessage" class="confirmation">
-                    <h3 class="serif" style="font-size: 2rem;">Thank You!</h3>
-                    <p>Your response has been successfully received.</p>
-                </div>
             </div>
         </section>
     </div>
 
     <footer>
-        <p class="serif" style="font-size: 1.2rem; margin-bottom: 0.5rem;">Isiah & Monica</p>
+        <p class="serif" style="font-size: 1.4rem; color: var(--sky-dark); margin-bottom: 0.3rem;">Isiah & Monica</p>
         <p>We can't wait to celebrate with you!</p>
     </footer>
 
     <script>
-        // Set Wedding Date: September 19, 2026, 10:00 AM
         const weddingDate = new Date('2026-09-19T10:00:00').getTime();
 
-        // Countdown Timer
         const timer = setInterval(function() {
             const now = new Date().getTime();
             const distance = weddingDate - now;
@@ -550,21 +540,10 @@
             document.getElementById('seconds').innerText = Math.floor((distance % (1000 * 60)) / 1000);
         }, 1000);
 
-        // Hide/Show Guest count
         function toggleGuestCount(isAttending) {
             const group = document.getElementById('guestCountGroup');
             group.style.display = isAttending ? 'block' : 'none';
         }
-
-        // Form submission demo handler
-        document.getElementById('rsvpForm').addEventListener('submit', function(e) {
-            const form = e.target;
-            if (form.action.includes('YOUR_FORMSPREE_ID')) {
-                e.preventDefault();
-                form.style.display = 'none';
-                document.getElementById('confirmationMessage').style.display = 'block';
-            }
-        });
     </script>
 </body>
 </html>
