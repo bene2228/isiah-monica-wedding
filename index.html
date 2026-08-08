@@ -9,13 +9,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #fdfbf7;
-            --accent-color: #8a7356;
-            --accent-hover: #6e5b43;
-            --text-dark: #2c2a29;
-            --text-muted: #6b6661;
+            --bg-color: #f4f8fb;
+            --accent-color: #4a86e8;
+            --accent-hover: #2b62ba;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
             --card-bg: #ffffff;
-            --border-color: #e8e2d9;
+            --border-color: #e2e8f0;
         }
 
         * {
@@ -45,7 +45,7 @@
             align-items: center;
             text-align: center;
             padding: 2rem;
-            background: linear-gradient(rgba(253, 251, 247, 0.82), rgba(253, 251, 247, 0.82)), 
+            background: linear-gradient(rgba(244, 248, 251, 0.85), rgba(244, 248, 251, 0.85)), 
                         url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
             border-bottom: 1px solid var(--border-color);
         }
@@ -56,6 +56,7 @@
             text-transform: uppercase;
             color: var(--accent-color);
             margin-bottom: 1rem;
+            font-weight: 500;
         }
 
         .names {
@@ -100,7 +101,7 @@
 
         /* Shared Section Layout */
         .section {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 4.5rem 1.5rem;
             text-align: center;
@@ -125,10 +126,10 @@
             margin: 0 auto;
         }
 
-        /* Photo Gallery */
+        /* Photo Gallery - Grid Layout for 5 Photos */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 1.25rem;
         }
 
@@ -200,6 +201,7 @@
             letter-spacing: 1.5px;
             text-transform: uppercase;
             transition: all 0.3s ease;
+            font-weight: 500;
         }
 
         .btn-map:hover {
@@ -236,9 +238,23 @@
             font-size: 0.95rem;
         }
 
+        .color-palette {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .swatch {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+
         /* RSVP Section */
         .rsvp-bg {
-            background-color: #f7f3ed;
+            background-color: #eef6fc;
             border-top: 1px solid var(--border-color);
             border-bottom: 1px solid var(--border-color);
         }
@@ -273,7 +289,7 @@
             border-radius: 4px;
             font-family: inherit;
             font-size: 0.95rem;
-            background-color: #faf8f5;
+            background-color: #f8fafc;
         }
 
         input:focus, select:focus, textarea:focus {
@@ -358,20 +374,26 @@
         </div>
     </header>
 
-    <!-- Photo Gallery Section -->
+    <!-- Photo Gallery Section (5 Photos) -->
     <section class="section">
         <h2 class="section-title">Our Moments</h2>
         <p class="section-subtitle serif">A few memories from our journey together</p>
         
         <div class="gallery-grid">
             <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80" alt="Isiah and Monica 1">
+                <img src="photo1.jpg" alt="Isiah and Monica 1" onerror="this.src='https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80'">
             </div>
             <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=800&q=80" alt="Isiah and Monica 2">
+                <img src="photo2.jpg" alt="Isiah and Monica 2" onerror="this.src='https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=800&q=80'">
             </div>
             <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=800&q=80" alt="Isiah and Monica 3">
+                <img src="photo3.jpg" alt="Isiah and Monica 3" onerror="this.src='https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=800&q=80'">
+            </div>
+            <div class="gallery-item">
+                <img src="photo4.jpg" alt="Isiah and Monica 4" onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80'">
+            </div>
+            <div class="gallery-item">
+                <img src="photo5.jpg" alt="Isiah and Monica 5" onerror="this.src='https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=800&q=80'">
             </div>
         </div>
     </section>
@@ -420,7 +442,7 @@
         <div class="attire-card">
             <h3 class="serif" style="font-size: 2rem; color: var(--accent-color); margin-bottom: 0.5rem;">Formal Attire</h3>
             <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">
-                We kindly request our guests to come in formal attire.
+                We kindly request our guests to come in formal attire following our motif.
             </p>
 
             <div class="attire-details">
@@ -433,6 +455,14 @@
                     <p>Formal Dress / Cocktail Dress</p>
                 </div>
             </div>
+
+            <p style="margin-top: 1.5rem; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; color: var(--text-dark);">Motif Color Palette</p>
+            <div class="color-palette">
+                <div class="swatch" style="background-color: #87ceeb;" title="Sky Blue"></div>
+                <div class="swatch" style="background-color: #4a86e8;" title="Soft Blue"></div>
+                <div class="swatch" style="background-color: #2b62ba;" title="Dusty Blue"></div>
+                <div class="swatch" style="background-color: #e0f2fe;" title="Light Ice Blue"></div>
+            </div>
         </div>
     </section>
 
@@ -440,7 +470,7 @@
     <div class="rsvp-bg">
         <section class="section">
             <h2 class="section-title">RSVP</h2>
-            <p class="section-subtitle serif">Please kindly respond by August 20, 2026</p>
+            <p class="section-subtitle serif">Please kindly respond until <strong>September 5, 2026</strong></p>
 
             <div class="form-container">
                 <form id="rsvpForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
@@ -480,7 +510,7 @@
 
                     <div class="form-group">
                         <label for="dietary">Message for the Couple</label>
-                        <textarea id="dietary" name="dietary" rows="3" placeholder="Song requests, well wishes, or dietary restrictions..."></textarea>
+                        <textarea id="dietary" name="dietary" rows="3" placeholder="Song requests, well wishes, or message for Isiah & Monica..."></textarea>
                     </div>
 
                     <button type="submit" class="btn-submit">Submit Response</button>
