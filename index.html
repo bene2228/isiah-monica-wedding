@@ -29,6 +29,7 @@
             background-color: var(--sky-bg);
             color: var(--text-main);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         h1, h2, h3, .serif {
@@ -50,6 +51,25 @@
             background-position: center;
             background-repeat: no-repeat;
             border-bottom: 2px solid var(--sky-border);
+        }
+
+        /* Hero Animation on Load */
+        .hero .subtitle, .hero .names, .hero .date-location, .hero .countdown {
+            opacity: 0;
+            transform: translateY(25px);
+            animation: heroFadeIn 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+
+        .hero .subtitle { animation-delay: 0.2s; }
+        .hero .names { animation-delay: 0.4s; }
+        .hero .date-location { animation-delay: 0.6s; }
+        .hero .countdown { animation-delay: 0.8s; }
+
+        @keyframes heroFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .subtitle {
@@ -108,6 +128,19 @@
             font-weight: 600;
         }
 
+        /* Scroll Animations (Fade-in & Slide-up) */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, transform;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         /* Section Settings */
         .section {
             max-width: 1000px;
@@ -150,17 +183,23 @@
             box-shadow: 0 8px 20px rgba(2, 132, 199, 0.12);
             border: 3px solid #ffffff;
             background-color: #cbd5e1;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
 
         .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.4s ease;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(2, 132, 199, 0.2);
         }
 
         .gallery-item img:hover {
-            transform: scale(1.05);
+            transform: scale(1.08);
         }
 
         /* Cards Layout */
@@ -179,6 +218,12 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(2, 132, 199, 0.15);
         }
 
         .card h3 {
@@ -217,6 +262,7 @@
 
         .btn-map:hover {
             background-color: var(--sky-dark);
+            box-shadow: 0 4px 12px rgba(12, 74, 110, 0.3);
         }
 
         /* Attire Box */
@@ -262,6 +308,11 @@
             border-radius: 50%;
             border: 2px solid #ffffff;
             box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .swatch:hover {
+            transform: scale(1.15);
         }
 
         /* RSVP Form */
@@ -305,6 +356,7 @@
             font-size: 1rem;
             background-color: #f8fafc;
             color: var(--text-main);
+            transition: border-color 0.3s, box-shadow 0.3s;
         }
 
         input:focus, select:focus, textarea:focus {
@@ -347,11 +399,12 @@
             text-transform: uppercase;
             font-weight: 700;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: background 0.3s, transform 0.2s;
         }
 
         button.btn-submit:hover {
             background-color: var(--sky-dark);
+            transform: translateY(-2px);
         }
 
         .rsvp-note {
@@ -406,8 +459,8 @@
         </div>
     </header>
 
-    <!-- Gallery Section (4 Photos Only) -->
-    <section class="section">
+    <!-- Gallery Section (Animated) -->
+    <section class="section fade-in-section">
         <h2 class="section-title">Our Moments</h2>
         <p class="section-subtitle serif">A few memories from our journey together</p>
         
@@ -421,8 +474,8 @@
 
     <div class="divider"></div>
 
-    <!-- Location Section -->
-    <section class="section">
+    <!-- Location Section (Animated) -->
+    <section class="section fade-in-section">
         <h2 class="section-title">Schedule & Locations</h2>
         <p class="section-subtitle serif">We look forward to celebrating with you</p>
         
@@ -455,8 +508,8 @@
 
     <div class="divider"></div>
 
-    <!-- Dress Code Section -->
-    <section class="section">
+    <!-- Dress Code Section (Animated) -->
+    <section class="section fade-in-section">
         <h2 class="section-title">Dress Code</h2>
         <div class="attire-card">
             <h3 class="serif" style="font-size: 2.2rem; color: var(--sky-dark); margin-bottom: 0.5rem;">Formal Attire</h3>
@@ -485,9 +538,9 @@
         </div>
     </section>
 
-    <!-- RSVP Section -->
+    <!-- RSVP Section (Animated) -->
     <div class="rsvp-section">
-        <section class="section">
+        <section class="section fade-in-section">
             <h2 class="section-title">RSVP</h2>
             <p class="section-subtitle serif">Please kindly respond until <strong>September 5, 2026</strong></p>
 
@@ -548,12 +601,30 @@
         </section>
     </div>
 
-    <footer>
+    <footer class="fade-in-section">
         <p class="serif" style="font-size: 1.4rem; color: #0c4a6e; margin-bottom: 0.3rem;">Isiah & Monica</p>
         <p>We can't wait to celebrate with you!</p>
     </footer>
 
     <script>
+        // Scroll Intersection Observer for Animations
+        const observerOptions = {
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-section').forEach(section => {
+            observer.observe(section);
+        });
+
         // Countdown Timer
         const weddingDate = new Date('2026-09-19T10:00:00').getTime();
         const timer = setInterval(function() {
