@@ -169,21 +169,29 @@
             margin: 0 auto;
         }
 
-        /* Gallery Grid (4 items) */
+        /* Gallery Grid Custom Layout (1 Landscape Top, 3 Portrait Bottom) */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
         }
 
         .gallery-item {
             overflow: hidden;
             border-radius: 12px;
-            aspect-ratio: 4/5;
             box-shadow: 0 8px 20px rgba(2, 132, 199, 0.12);
             border: 3px solid #ffffff;
             background-color: #cbd5e1;
             transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .gallery-item-landscape {
+            grid-column: 1 / -1;
+            aspect-ratio: 16 / 9;
+        }
+
+        .gallery-item-portrait {
+            aspect-ratio: 3 / 4;
         }
 
         .gallery-item img {
@@ -354,6 +362,14 @@
             font-weight: 700;
         }
 
+        .field-help {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            display: block;
+            font-weight: 500;
+        }
+
         input, select, textarea {
             width: 100%;
             padding: 0.85rem;
@@ -422,6 +438,7 @@
             border-top: 1px dashed var(--sky-border);
             padding-top: 1rem;
             font-weight: 500;
+            line-height: 1.5;
         }
 
         .rsvp-note a {
@@ -447,6 +464,7 @@
             .countdown { gap: 0.6rem; padding: 0.8rem 1rem; }
             .number { font-size: 1.5rem; }
             .attire-details { flex-direction: column; gap: 1.5rem; }
+            .gallery-grid { gap: 0.75rem; }
         }
     </style>
 </head>
@@ -466,16 +484,24 @@
         </div>
     </header>
 
-    <!-- Gallery Section (Animated) -->
+    <!-- Gallery Section (1 Landscape Top, 3 Portrait Bottom) -->
     <section class="section fade-in-section">
         <h2 class="section-title">Our Moments</h2>
         <p class="section-subtitle serif">A few memories from our journey together</p>
         
         <div class="gallery-grid">
-            <div class="gallery-item"><img src="photo1.jpg" alt="Isiah and Monica 1"></div>
-            <div class="gallery-item"><img src="photo2.jpg" alt="Isiah and Monica 2"></div>
-            <div class="gallery-item"><img src="photo3.jpg" alt="Isiah and Monica 3"></div>
-            <div class="gallery-item"><img src="photo4.jpg" alt="Isiah and Monica 4"></div>
+            <div class="gallery-item gallery-item-landscape">
+                <img src="photo6.jpg" alt="Isiah and Monica 1">
+            </div>
+            <div class="gallery-item gallery-item-portrait">
+                <img src="photo7.jpg" alt="Isiah and Monica 2">
+            </div>
+            <div class="gallery-item gallery-item-portrait">
+                <img src="photo8.jpg" alt="Isiah and Monica 3">
+            </div>
+            <div class="gallery-item gallery-item-portrait">
+                <img src="photo9.jpg" alt="Isiah and Monica 4">
+            </div>
         </div>
     </section>
 
@@ -547,7 +573,7 @@
 
     <div class="divider"></div>
 
-    <!-- The Finer Details Section (NEW) -->
+    <!-- The Finer Details Section -->
     <section class="section fade-in-section">
         <h2 class="section-title">The Finer Details</h2>
         <p class="section-subtitle serif">Important notes for our special day</p>
@@ -590,9 +616,11 @@
 
             <div class="form-container">
                 <form id="rsvpForm" action="https://formspree.io/f/mppaqdlz" method="POST">
+                    
                     <div class="form-group">
-                        <label for="fullName">Full Name(s)</label>
-                        <input type="text" id="fullName" name="fullName" required placeholder="e.g. Juan & Maria Dela Cruz">
+                        <label for="fullName">Name(s) of Guest(s) Attending</label>
+                        <span class="field-help">Please enter the full name(s) of everyone attending for the reception guest list.</span>
+                        <input type="text" id="fullName" name="fullName" required placeholder="e.g. Juan Dela Cruz, Maria Dela Cruz">
                     </div>
 
                     <div class="form-group">
@@ -639,7 +667,7 @@
                 </div>
 
                 <p class="rsvp-note">
-                    For any changes in your RSVP, kindly email us at <a href="mailto:benedictsolis22@gmail.com">benedictsolis22@gmail.com</a>.
+                    For any changes to your RSVP, including requests for a plus-one, kindly email us at <a href="mailto:benedictsolis22@gmail.com">benedictsolis22@gmail.com</a>.
                 </p>
             </div>
         </section>
