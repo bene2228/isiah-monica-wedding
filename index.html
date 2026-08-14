@@ -32,7 +32,7 @@
             overflow-x: hidden;
         }
 
-        h1, h2, h3, .serif {
+        h1, h2, h3, h4, .serif {
             font-family: 'Cormorant Garamond', serif;
             font-weight: 700;
         }
@@ -209,6 +209,12 @@
             gap: 2rem;
         }
 
+        .grid-three {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
         .card {
             background: var(--sky-card);
             padding: 2.5rem 2rem;
@@ -227,9 +233,9 @@
         }
 
         .card h3 {
-            font-size: 2.2rem;
+            font-size: 2rem;
             color: var(--sky-dark);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
         }
 
         .card .time {
@@ -241,8 +247,9 @@
 
         .card p {
             color: var(--text-muted);
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 500;
+            line-height: 1.6;
         }
 
         .btn-map {
@@ -512,9 +519,9 @@
     <section class="section fade-in-section">
         <h2 class="section-title">Dress Code</h2>
         <div class="attire-card">
-            <h3 class="serif" style="font-size: 2.2rem; color: var(--sky-dark); margin-bottom: 0.5rem;">Formal Attire</h3>
+            <h3 class="serif" style="font-size: 2.2rem; color: var(--sky-dark); margin-bottom: 0.5rem;">Formal / Semi-Formal Attire</h3>
             <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto; font-weight: 500;">
-                We kindly request our guests to come in formal attire following our Sky Blue motif.
+                We would like to see you in formal / semi-formal attire that suits in our color motif.
             </p>
 
             <div class="attire-details">
@@ -534,6 +541,43 @@
                 <div class="swatch" style="background-color: #7dd3fc;" title="Sky Blue"></div>
                 <div class="swatch" style="background-color: #0284c7;" title="Classic Sky Blue"></div>
                 <div class="swatch" style="background-color: #0c4a6e;" title="Deep Sky Blue"></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- The Finer Details Section (NEW) -->
+    <section class="section fade-in-section">
+        <h2 class="section-title">The Finer Details</h2>
+        <p class="section-subtitle serif">Important notes for our special day</p>
+
+        <div class="grid-three">
+            <div class="card">
+                <div>
+                    <h3>Gift Guide</h3>
+                    <p>
+                        If you were thinking of giving a gift to help us on our way, a gift of cash towards our future would really make our day. However, if you would prefer a gift, please feel free to surprise us in your own special way.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h3>Unplugged Ceremony</h3>
+                    <p>
+                        We have invited a team to help us capture this day, so please just be present and keep our ceremony camera-free until we say "I do."
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h3>Intimate Celebration</h3>
+                    <p>
+                        As this is an intimate wedding celebration, seats are strictly reserved. We hope for your kind understanding by not bringing plus ones to our event.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
