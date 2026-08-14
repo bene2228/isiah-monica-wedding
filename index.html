@@ -391,7 +391,8 @@
 
         .radio-group {
             display: flex;
-            gap: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1.2rem;
             margin-top: 0.5rem;
         }
 
@@ -403,10 +404,12 @@
             cursor: pointer;
             color: var(--text-main);
             font-weight: 600;
+            white-space: nowrap;
         }
 
         .radio-label input {
             width: auto;
+            flex-shrink: 0;
         }
 
         button.btn-submit {
@@ -459,12 +462,19 @@
             background-color: var(--sky-bg);
         }
 
+        /* Mobile Responsive Adjustments */
         @media (max-width: 600px) {
+            .section { padding: 3rem 1rem; }
             .names { font-size: 2.8rem; }
             .countdown { gap: 0.6rem; padding: 0.8rem 1rem; }
             .number { font-size: 1.5rem; }
             .attire-details { flex-direction: column; gap: 1.5rem; }
             .gallery-grid { gap: 0.75rem; }
+            
+            /* Form Mobile Fixes */
+            .form-container { padding: 1.5rem 1.25rem; }
+            .radio-group { flex-direction: column; gap: 0.8rem; }
+            .radio-label { white-space: normal; }
         }
     </style>
 </head>
@@ -491,16 +501,16 @@
         
         <div class="gallery-grid">
             <div class="gallery-item gallery-item-landscape">
-                <img src="photo6.jpg" alt="Isiah and Monica 1">
+                <img src="photo1.jpg" alt="Isiah and Monica 1">
             </div>
             <div class="gallery-item gallery-item-portrait">
-                <img src="photo7.jpg" alt="Isiah and Monica 2">
+                <img src="photo2.jpg" alt="Isiah and Monica 2">
             </div>
             <div class="gallery-item gallery-item-portrait">
-                <img src="photo8.jpg" alt="Isiah and Monica 3">
+                <img src="photo3.jpg" alt="Isiah and Monica 3">
             </div>
             <div class="gallery-item gallery-item-portrait">
-                <img src="photo9.jpg" alt="Isiah and Monica 4">
+                <img src="photo4.jpg" alt="Isiah and Monica 4">
             </div>
         </div>
     </section>
