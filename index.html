@@ -169,7 +169,7 @@
             margin: 0 auto;
         }
 
-        /* Gallery Grid Custom Layout (1 Landscape Top, 3 Portrait Bottom) */
+        /* Gallery Grid Custom Layout */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -280,7 +280,7 @@
             box-shadow: 0 4px 12px rgba(12, 74, 110, 0.3);
         }
 
-        /* Attire Box */
+        /* Attire Box & Styling */
         .attire-card {
             background: var(--sky-card);
             padding: 2.5rem;
@@ -294,6 +294,7 @@
             justify-content: center;
             gap: 3rem;
             margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
         }
 
         .attire-column h4 {
@@ -310,12 +311,29 @@
             font-weight: 500;
         }
 
+        /* Color Palette Swatches */
+        .color-palette-title {
+            margin-top: 1.5rem;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--sky-dark);
+            font-weight: 700;
+        }
+
         .color-palette {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 0.9rem;
-            margin-top: 1.2rem;
+            gap: 1rem;
+            margin: 1rem 0 2rem 0;
+        }
+
+        .swatch-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.4rem;
         }
 
         .swatch {
@@ -323,12 +341,32 @@
             height: 42px;
             border-radius: 50%;
             border: 2px solid #ffffff;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.12);
             transition: transform 0.3s ease;
         }
 
         .swatch:hover {
             transform: scale(1.18);
+        }
+
+        /* Cropped Inspo Image Frame */
+        .attire-inspo-container {
+            background: #fafafa;
+            padding: 1.2rem;
+            border-radius: 12px;
+            border: 1px solid var(--sky-border);
+            display: inline-block;
+            max-width: 750px;
+            width: 100%;
+            margin-top: 0.5rem;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.02);
+        }
+
+        .attire-inspo-img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
         }
 
         /* RSVP Form */
@@ -469,8 +507,10 @@
             .names { font-size: 2.8rem; }
             .countdown { gap: 0.6rem; padding: 0.8rem 1rem; }
             .number { font-size: 1.5rem; }
-            .attire-details { flex-direction: column; gap: 1.5rem; }
+            .attire-card { padding: 1.5rem 1rem; }
+            .attire-details { flex-direction: column; gap: 1.2rem; }
             .gallery-grid { gap: 0.75rem; }
+            .attire-inspo-container { padding: 0.5rem; }
             
             /* Form Mobile Fixes */
             .form-container { padding: 1.5rem 1.25rem; }
@@ -495,7 +535,7 @@
         </div>
     </header>
 
-    <!-- Gallery Section (1 Landscape Top, 3 Portrait Bottom) -->
+    <!-- Gallery Section -->
     <section class="section fade-in-section">
         <h2 class="section-title">Our Moments</h2>
         <p class="section-subtitle serif">A few memories from our journey together</p>
@@ -518,7 +558,7 @@
 
     <div class="divider"></div>
 
-    <!-- Location Section (Animated) -->
+    <!-- Location Section -->
     <section class="section fade-in-section">
         <h2 class="section-title">Schedule & Locations</h2>
         <p class="section-subtitle serif">We look forward to celebrating with you</p>
@@ -552,7 +592,7 @@
 
     <div class="divider"></div>
 
-    <!-- Dress Code Section (Animated) -->
+    <!-- Dress Code Section -->
     <section class="section fade-in-section">
         <h2 class="section-title">Dress Code</h2>
         <div class="attire-card">
@@ -572,7 +612,8 @@
                 </div>
             </div>
 
-            <p style="margin-top: 1.8rem; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; color: var(--sky-dark); font-weight: 700;">Guest Color Palette</p>
+            <!-- Color Palette Swatches -->
+            <p class="color-palette-title">Guest Color Palette</p>
             <div class="color-palette">
                 <div class="swatch" style="background-color: #f9a8d4;" title="Pastel Pink"></div>
                 <div class="swatch" style="background-color: #fef08a;" title="Pastel Yellow"></div>
@@ -580,6 +621,11 @@
                 <div class="swatch" style="background-color: #e9d5ff;" title="Pastel Purple"></div>
                 <div class="swatch" style="background-color: #bae6fd;" title="Pastel Blue"></div>
                 <div class="swatch" style="background-color: #bbf7d0;" title="Pastel Green"></div>
+            </div>
+
+            <!-- Cropped Inspo Image Container -->
+            <div class="attire-inspo-container">
+                <img src="attire-guide.jpg" alt="Attire Inspiration Guide" class="attire-inspo-img">
             </div>
         </div>
     </section>
@@ -621,7 +667,7 @@
         </div>
     </section>
 
-    <!-- RSVP Section (Animated) -->
+    <!-- RSVP Section -->
     <div class="rsvp-section">
         <section class="section fade-in-section">
             <h2 class="section-title">RSVP</h2>
