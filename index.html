@@ -1,816 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wedding Invitation | Isiah & Monica</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,400&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --sky-bg: #e0f2fe;          /* Soft Sky Blue Background */
-            --sky-card: #ffffff;        /* Clean White Cards */
-            --sky-accent: #0284c7;      /* Primary Sky Blue */
-            --sky-dark: #0c4a6e;        /* Deep Sky Blue for High Text Contrast */
-            --sky-border: #bae6fd;      /* Soft Blue Border */
-            --text-main: #0f172a;       /* Dark Text for Readability */
-            --text-muted: #334155;      /* Subtitle Dark Slate */
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding Celebration & RSVP</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #eaf3fa;
+      color: #1e3a52;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 15px;
+      min-height: 100vh;
+    }
 
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--sky-bg);
-            color: var(--text-main);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+    .container {
+      width: 100%;
+      max-width: 500px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
 
-        h1, h2, h3, h4, .serif {
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 700;
-        }
+    .card {
+      background: #ffffff;
+      border: 1px solid #cce2f5;
+      border-radius: 20px;
+      padding: 30px 25px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    }
 
-        /* Hero Header with photo5.jpg Background */
-        .hero {
-            min-height: 85vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 3rem 1rem;
-            background: linear-gradient(180deg, rgba(224, 242, 254, 0.75) 0%, rgba(224, 242, 254, 0.88) 100%), url('photo5.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            border-bottom: 2px solid var(--sky-border);
-        }
+    h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.8rem;
+      color: #1a364a;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+    }
 
-        /* Hero Animation on Load */
-        .hero .subtitle, .hero .names, .hero .date-location, .hero .countdown {
-            opacity: 0;
-            transform: translateY(25px);
-            animation: heroFadeIn 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-        }
+    p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #4a6378;
+    }
 
-        .hero .subtitle { animation-delay: 0.2s; }
-        .hero .names { animation-delay: 0.4s; }
-        .hero .date-location { animation-delay: 0.6s; }
-        .hero .countdown { animation-delay: 0.8s; }
+    .rsvp-title {
+      font-family: 'Cinzel', serif;
+      font-size: 2.2rem;
+      color: #1a364a;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+    }
 
-        @keyframes heroFadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+    .deadline {
+      margin-bottom: 25px;
+    }
 
-        .subtitle {
-            font-size: 1rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: var(--sky-accent);
-            font-weight: 700;
-            margin-bottom: 0.8rem;
-        }
+    .form-group {
+      text-align: left;
+      margin-bottom: 20px;
+    }
 
-        .names {
-            font-size: 3.8rem;
-            color: var(--sky-dark);
-            margin-bottom: 0.8rem;
-            line-height: 1.1;
-        }
+    label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: #1a364a;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
 
-        .date-location {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            font-weight: 600;
-            margin-bottom: 2rem;
-        }
+    .subtext {
+      font-size: 0.85rem;
+      color: #6b8296;
+      margin-bottom: 12px;
+      text-align: left;
+    }
 
-        /* Countdown */
-        .countdown {
-            display: flex;
-            gap: 1.2rem;
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(5px);
-            padding: 1rem 1.8rem;
-            border-radius: 50px;
-            border: 1px solid var(--sky-border);
-            box-shadow: 0 4px 15px rgba(2, 132, 199, 0.15);
-        }
+    select, input[type="text"] {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #bcd5eb;
+      border-radius: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.95rem;
+      color: #1e3a52;
+      background-color: #f8fbfe;
+      outline: none;
+      transition: border-color 0.3s;
+    }
 
-        .time-box {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+    select:focus, input[type="text"]:focus {
+      border-color: #1a364a;
+      background-color: #ffffff;
+    }
 
-        .number {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: var(--sky-dark);
-        }
+    .btn-submit {
+      width: 100%;
+      padding: 14px;
+      background-color: #1a364a;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-top: 10px;
+    }
 
-        .label {
-            font-size: 0.75rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: var(--sky-accent);
-            font-weight: 600;
-        }
-
-        /* Scroll Animations (Fade-in & Slide-up) */
-        .fade-in-section {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-            will-change: opacity, transform;
-        }
-
-        .fade-in-section.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Section Settings */
-        .section {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 4rem 1.5rem;
-            text-align: center;
-        }
-
-        .section-title {
-            font-size: 2.8rem;
-            color: var(--sky-dark);
-            margin-bottom: 0.5rem;
-        }
-
-        .section-subtitle {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            margin-bottom: 2.5rem;
-            font-weight: 500;
-        }
-
-        .divider {
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--sky-border), transparent);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        /* Gallery Grid Custom Layout */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-        }
-
-        .gallery-item {
-            overflow: hidden;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(2, 132, 199, 0.12);
-            border: 3px solid #ffffff;
-            background-color: #cbd5e1;
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-        }
-
-        .gallery-item-landscape {
-            grid-column: 1 / -1;
-            aspect-ratio: 16 / 9;
-        }
-
-        .gallery-item-portrait {
-            aspect-ratio: 3 / 4;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(2, 132, 199, 0.2);
-        }
-
-        .gallery-item img:hover {
-            transform: scale(1.08);
-        }
-
-        /* Cards Layout */
-        .grid-two {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .grid-three {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .card {
-            background: var(--sky-card);
-            padding: 2.5rem 2rem;
-            border-radius: 16px;
-            border: 2px solid var(--sky-border);
-            box-shadow: 0 10px 25px rgba(2, 132, 199, 0.08);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(2, 132, 199, 0.15);
-        }
-
-        .card h3 {
-            font-size: 2rem;
-            color: var(--sky-dark);
-            margin-bottom: 0.8rem;
-        }
-
-        .card .time {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--sky-accent);
-            margin-bottom: 0.8rem;
-        }
-
-        .card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            font-weight: 500;
-            line-height: 1.6;
-        }
-
-        .btn-map {
-            display: inline-block;
-            margin-top: 1.5rem;
-            padding: 0.75rem 1.5rem;
-            background-color: var(--sky-accent);
-            color: #ffffff;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .btn-map:hover {
-            background-color: var(--sky-dark);
-            box-shadow: 0 4px 12px rgba(12, 74, 110, 0.3);
-        }
-
-        /* Attire Box & Styling */
-        .attire-card {
-            background: var(--sky-card);
-            padding: 2.5rem;
-            border-radius: 16px;
-            border: 2px solid var(--sky-border);
-            box-shadow: 0 10px 25px rgba(2, 132, 199, 0.08);
-        }
-
-        .attire-details {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin-top: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .attire-column h4 {
-            font-size: 1.1rem;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            color: var(--sky-dark);
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-        }
-
-        .attire-column p {
-            color: var(--text-muted);
-            font-weight: 500;
-        }
-
-        /* Color Palette Swatches */
-        .color-palette-title {
-            margin-top: 1.5rem;
-            font-size: 0.85rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--sky-dark);
-            font-weight: 700;
-        }
-
-        .color-palette {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin: 1rem 0 2rem 0;
-        }
-
-        .swatch {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            border: 2px solid #ffffff;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.12);
-            transition: transform 0.3s ease;
-        }
-
-        .swatch:hover {
-            transform: scale(1.18);
-        }
-
-        /* Cropped Inspo Image Container */
-        .attire-inspo-container {
-            background: #fafafa;
-            padding: 1.2rem;
-            border-radius: 12px;
-            border: 1px solid var(--sky-border);
-            display: inline-block;
-            max-width: 750px;
-            width: 100%;
-            margin-top: 0.5rem;
-            box-shadow: inset 0 0 10px rgba(0,0,0,0.02);
-        }
-
-        .attire-inspo-img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            display: block;
-        }
-
-        /* RSVP Form */
-        .rsvp-section {
-            background-color: #f0f9ff;
-            border-top: 2px solid var(--sky-border);
-            border-bottom: 2px solid var(--sky-border);
-        }
-
-        .form-container {
-            max-width: 550px;
-            margin: 0 auto;
-            background: var(--sky-card);
-            padding: 2.5rem;
-            border-radius: 16px;
-            border: 2px solid var(--sky-border);
-            box-shadow: 0 10px 30px rgba(2, 132, 199, 0.1);
-            text-align: left;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        label {
-            display: block;
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 0.5rem;
-            color: var(--sky-dark);
-            font-weight: 700;
-        }
-
-        .field-help {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-bottom: 0.5rem;
-            display: block;
-            font-weight: 500;
-        }
-
-        input, select, textarea {
-            width: 100%;
-            padding: 0.85rem;
-            border: 1px solid var(--sky-border);
-            border-radius: 8px;
-            font-family: inherit;
-            font-size: 1rem;
-            background-color: #f8fafc;
-            color: var(--text-main);
-            transition: border-color 0.3s, box-shadow 0.3s;
-        }
-
-        input:focus, select:focus, textarea:focus {
-            outline: none;
-            border-color: var(--sky-accent);
-            background-color: #ffffff;
-            box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
-        }
-
-        .radio-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.2rem;
-            margin-top: 0.5rem;
-        }
-
-        .radio-label {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.95rem;
-            cursor: pointer;
-            color: var(--text-main);
-            font-weight: 600;
-            white-space: nowrap;
-        }
-
-        .radio-label input {
-            width: auto;
-            flex-shrink: 0;
-        }
-
-        button.btn-submit {
-            width: 100%;
-            padding: 1rem;
-            background-color: var(--sky-accent);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.95rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            font-weight: 700;
-            cursor: pointer;
-            transition: background 0.3s, transform 0.2s;
-        }
-
-        button.btn-submit:hover {
-            background-color: var(--sky-dark);
-            transform: translateY(-2px);
-        }
-
-        .rsvp-note {
-            text-align: center;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-top: 1.5rem;
-            border-top: 1px dashed var(--sky-border);
-            padding-top: 1rem;
-            font-weight: 500;
-            line-height: 1.5;
-        }
-
-        .rsvp-note a {
-            color: var(--sky-accent);
-            font-weight: 600;
-            text-decoration: none;
-        }
-
-        .rsvp-note a:hover {
-            text-decoration: underline;
-        }
-
-        footer {
-            text-align: center;
-            padding: 3rem 1rem;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            background-color: var(--sky-bg);
-        }
-
-        /* Mobile Responsive Adjustments */
-        @media (max-width: 600px) {
-            .section { padding: 3rem 1rem; }
-            .names { font-size: 2.8rem; }
-            .countdown { gap: 0.6rem; padding: 0.8rem 1rem; }
-            .number { font-size: 1.5rem; }
-            .attire-card { padding: 1.5rem 1rem; }
-            .attire-details { flex-direction: column; gap: 1.2rem; }
-            .gallery-grid { gap: 0.75rem; }
-            .attire-inspo-container { padding: 0.5rem; }
-            
-            /* Form Mobile Fixes */
-            .form-container { padding: 1.5rem 1.25rem; }
-            .radio-group { flex-direction: column; gap: 0.8rem; }
-            .radio-label { white-space: normal; }
-        }
-    </style>
+    .btn-submit:hover {
+      background-color: #2c526e;
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Header Section -->
-    <header class="hero">
-        <p class="subtitle">We Are Getting Married</p>
-        <h1 class="names">Isiah & Monica</h1>
-        <p class="date-location">Saturday, September 19, 2026</p>
-        
-        <div class="countdown">
-            <div class="time-box"><span id="days" class="number">00</span><span class="label">Days</span></div>
-            <div class="time-box"><span id="hours" class="number">00</span><span class="label">Hours</span></div>
-            <div class="time-box"><span id="minutes" class="number">00</span><span class="label">Mins</span></div>
-            <div class="time-box"><span id="seconds" class="number">00</span><span class="label">Secs</span></div>
-        </div>
-    </header>
-
-    <!-- Gallery Section -->
-    <section class="section fade-in-section">
-        <h2 class="section-title">Our Moments</h2>
-        <p class="section-subtitle serif">A few memories from our journey together</p>
-        
-        <div class="gallery-grid">
-            <div class="gallery-item gallery-item-landscape">
-                <img src="photo1.jpg" alt="Isiah and Monica 1">
-            </div>
-            <div class="gallery-item gallery-item-portrait">
-                <img src="photo2.jpg" alt="Isiah and Monica 2">
-            </div>
-            <div class="gallery-item gallery-item-portrait">
-                <img src="photo3.jpg" alt="Isiah and Monica 3">
-            </div>
-            <div class="gallery-item gallery-item-portrait">
-                <img src="photo4.jpg" alt="Isiah and Monica 4">
-            </div>
-        </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- Location Section -->
-    <section class="section fade-in-section">
-        <h2 class="section-title">Schedule & Locations</h2>
-        <p class="section-subtitle serif">We look forward to celebrating with you</p>
-        
-        <div class="grid-two">
-            <div class="card">
-                <div>
-                    <h3>Church Ceremony</h3>
-                    <p class="time">10:00 AM</p>
-                    <p><strong>Church Location</strong></p>
-                    <p>Click below for directions and exact location</p>
-                </div>
-                <div>
-                    <a href="https://maps.app.goo.gl/9ceS4WMsJ5xAWBZy8" target="_blank" rel="noopener noreferrer" class="btn-map">View Church Map</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div>
-                    <h3>Reception</h3>
-                    <p class="time">11:30 AM</p>
-                    <p><strong>Reception Venue</strong></p>
-                    <p>Click below for directions and exact location</p>
-                </div>
-                <div>
-                    <a href="https://maps.app.goo.gl/PAxqoELMbgDdp5es6" target="_blank" rel="noopener noreferrer" class="btn-map">View Reception Map</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- Dress Code Section -->
-    <section class="section fade-in-section">
-        <h2 class="section-title">Dress Code</h2>
-        <div class="attire-card">
-            <h3 class="serif" style="font-size: 2.2rem; color: var(--sky-dark); margin-bottom: 0.5rem;">Semi-Formal / Muted Pastel & Blue Attire</h3>
-            <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto; font-weight: 500;">
-                Kindly wear semi-formal attire in these muted pastel and blue color tones.
-            </p>
-
-            <div class="attire-details">
-                <div class="attire-column">
-                    <h4>Gentlemen</h4>
-                    <p>Polo & Slacks or any semi-formal attire</p>
-                </div>
-                <div class="attire-column">
-                    <h4>Ladies</h4>
-                    <p>Formal to semi-formal dress or attire</p>
-                </div>
-            </div>
-
-            <!-- Color Palette Swatches -->
-            <p class="color-palette-title">Guest Color Palette</p>
-            <div class="color-palette">
-                <!-- Pastel Palette Swatches -->
-                <div class="swatch" style="background-color: #f9a8d4;" title="Pastel Pink"></div>
-                <div class="swatch" style="background-color: #fef08a;" title="Pastel Yellow"></div>
-                <div class="swatch" style="background-color: #fed7aa;" title="Pastel Peach"></div>
-                <div class="swatch" style="background-color: #e9d5ff;" title="Pastel Purple"></div>
-                <div class="swatch" style="background-color: #bbf7d0;" title="Pastel Green"></div>
-                <!-- Blue Palette Swatches -->
-                <div class="swatch" style="background-color: #e0f2fe;" title="Ice / Powder Blue"></div>
-                <div class="swatch" style="background-color: #bae6fd;" title="Soft Sky Blue"></div>
-                <div class="swatch" style="background-color: #7dd3fc;" title="Dusty Blue"></div>
-                <div class="swatch" style="background-color: #38bdf8;" title="Steel / Sky Blue"></div>
-                <div class="swatch" style="background-color: #0284c7;" title="Classic Blue"></div>
-                <div class="swatch" style="background-color: #0c4a6e;" title="Deep Navy Blue"></div>
-            </div>
-
-            <!-- Cropped Inspo Image Container -->
-            <div class="attire-inspo-container">
-                <img src="attire-guide.jpg" alt="Attire Inspiration Guide" class="attire-inspo-img">
-            </div>
-        </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- The Finer Details Section -->
-    <section class="section fade-in-section">
-        <h2 class="section-title">The Finer Details</h2>
-        <p class="section-subtitle serif">Important notes for our special day</p>
-
-        <div class="grid-three">
-            <div class="card">
-                <div>
-                    <h3>Gift Guide</h3>
-                    <p>
-                        If you were thinking of giving a gift to help us on our way, a gift of cash towards our future would really make our day. However, if you would prefer a gift, please feel free to surprise us in your own special way.
-                    </p>
-                </div>
-            </div>
-
-            <div class="card">
-                <div>
-                    <h3>Unplugged Ceremony</h3>
-                    <p>
-                        We have invited a team to help us capture this day, so please just be present and keep our ceremony camera-free until we say "I do."
-                    </p>
-                </div>
-            </div>
-
-            <div class="card">
-                <div>
-                    <h3>Intimate Celebration</h3>
-                    <p>
-                        As this is an intimate wedding celebration, seats are strictly reserved. We hope for your kind understanding by not bringing plus ones to our event.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- RSVP Section -->
-    <div class="rsvp-section">
-        <section class="section fade-in-section">
-            <h2 class="section-title">RSVP</h2>
-            <p class="section-subtitle serif">Please kindly respond until <strong>September 5, 2026</strong></p>
-
-            <div class="form-container">
-                <form id="rsvpForm" action="https://formspree.io/f/mppaqdlz" method="POST">
-                    
-                    <div class="form-group">
-                        <label for="fullName">Name(s) of Guest(s) Attending</label>
-                        <span class="field-help">Please enter the full name(s) of everyone attending for the reception guest list.</span>
-                        <input type="text" id="fullName" name="fullName" required placeholder="e.g. Juan Dela Cruz, Maria Dela Cruz">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" required placeholder="juan@example.com">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Will you be attending?</label>
-                        <div class="radio-group">
-                            <label class="radio-label">
-                                <input type="radio" name="attending" value="Joyfully Accepts" checked required onclick="toggleGuestCount(true)">
-                                Joyfully Accepts
-                            </label>
-                            <label class="radio-label">
-                                <input type="radio" name="attending" value="Regretfully Declines" onclick="toggleGuestCount(false)">
-                                Regretfully Declines
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="form-group" id="guestCountGroup">
-                        <label for="guestCount">NUMBER OF GUESTS (INCLUDING YOURSELF)</label>
-                        <select id="guestCount" name="guestCount">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Message for the Couple</label>
-                        <textarea id="message" name="message" rows="3" placeholder="Song requests, well wishes, or messages..."></textarea>
-                    </div>
-
-                    <button type="submit" id="submitBtn" class="btn-submit">Submit Response</button>
-                </form>
-
-                <div id="confirmationMessage" style="display: none; text-align: center; padding: 2rem;">
-                    <h3 class="serif" style="font-size: 2.2rem; color: #0c4a6e;">Thank You!</h3>
-                    <p style="color: #0284c7; font-weight: 600; margin-top: 0.5rem;">Your response has been successfully received.</p>
-                </div>
-
-                <p class="rsvp-note">
-                    For any changes to your RSVP, including requests for a plus-one, kindly email us at <a href="mailto:benedictsolis22@gmail.com">benedictsolis22@gmail.com</a>.
-                </p>
-            </div>
-        </section>
+  <div class="container">
+    
+    <!-- Camera Policy Card -->
+    <div class="card">
+      <p>present and keep our ceremony camera-free until we say "I do."</p>
     </div>
 
-    <footer class="fade-in-section">
-        <p class="serif" style="font-size: 1.4rem; color: #0c4a6e; margin-bottom: 0.3rem;">Isiah & Monica</p>
-        <p>We can't wait to celebrate with you!</p>
-    </footer>
+    <!-- Intimate Celebration Card -->
+    <div class="card">
+      <h2>Intimate Celebration</h2>
+      <p>
+        As this is an intimate wedding celebration, seats are strictly reserved. Guests are allowed up to <strong>one (+1) plus one</strong>, provided their full name is included in the RSVP form below.
+      </p>
+    </div>
 
-    <script>
-        // Scroll Intersection Observer for Animations
-        const observerOptions = {
-            threshold: 0.15
-        };
+    <!-- RSVP Card -->
+    <div class="card">
+      <h2 class="rsvp-title">RSVP</h2>
+      <p class="deadline">Please kindly respond until <strong>September 5, 2026</strong></p>
 
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
+      <form id="rsvpForm" onsubmit="handleFormSubmit(event)">
+        
+        <!-- Guest Count Selector (1 to 5) -->
+        <div class="form-group">
+          <label for="guestCount">NUMBER OF GUEST(S) ATTENDING</label>
+          <select id="guestCount" name="guestCount" onchange="updateGuestFields()">
+            <option value="1">1 Guest (Self only)</option>
+            <option value="2" selected>2 Guests (You + 1 Plus One)</option>
+            <option value="3">3 Guests</option>
+            <option value="4">4 Guests</option>
+            <option value="5">5 Guests</option>
+          </select>
+        </div>
 
-        document.querySelectorAll('.fade-in-section').forEach(section => {
-            observer.observe(section);
-        });
+        <!-- Dynamic Guest Names Container -->
+        <div class="form-group">
+          <label>NAME(S) OF GUEST(S) ATTENDING</label>
+          <p class="subtext">Please enter the full name(s) of everyone attending for the reception guest list.</p>
+          <div id="guestInputsContainer"></div>
+        </div>
 
-        // Countdown Timer
-        const weddingDate = new Date('2026-09-19T10:00:00').getTime();
-        const timer = setInterval(function() {
-            const now = new Date().getTime();
-            const distance = weddingDate - now;
+        <button type="submit" class="btn-submit">SUBMIT RSVP</button>
+      </form>
+    </div>
 
-            if (distance < 0) {
-                clearInterval(timer);
-                document.querySelector('.countdown').innerHTML = "<p class='serif' style='font-size:1.5rem;'>Today is the day!</p>";
-                return;
-            }
+  </div>
 
-            document.getElementById('days').innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
-            document.getElementById('hours').innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            document.getElementById('minutes').innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            document.getElementById('seconds').innerText = Math.floor((distance % (1000 * 60)) / 1000);
-        }, 1000);
+  <script>
+    function updateGuestFields() {
+      const count = parseInt(document.getElementById('guestCount').value);
+      const container = document.getElementById('guestInputsContainer');
+      container.innerHTML = '';
 
-        function toggleGuestCount(isAttending) {
-            const group = document.getElementById('guestCountGroup');
-            group.style.display = isAttending ? 'block' : 'none';
+      for (let i = 1; i <= count; i++) {
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.name = `guest_name_${i}`;
+        input.required = true;
+        input.style.marginBottom = '10px';
+        
+        if (i === 1) {
+          input.placeholder = 'e.g. Juan Dela Cruz (Main Guest)';
+        } else if (i === 2) {
+          input.placeholder = 'e.g. Maria Dela Cruz (Plus One)';
+        } else {
+          input.placeholder = `e.g. Guest ${i} Full Name`;
         }
+        
+        container.appendChild(input);
+      }
+    }
 
-        // Formspree AJAX Submission
-        const rsvpForm = document.getElementById('rsvpForm');
-        const confirmationMsg = document.getElementById('confirmationMessage');
-        const submitBtn = document.getElementById('submitBtn');
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      alert('Thank you for responding to our RSVP!');
+    }
 
-        rsvpForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            submitBtn.innerText = 'Sending...';
-            submitBtn.disabled = true;
+    // Initialize inputs when the page loads
+    document.addEventListener('DOMContentLoaded', updateGuestFields);
+  </script>
 
-            const data = new FormData(rsvpForm);
-            try {
-                const response = await fetch(rsvpForm.action, {
-                    method: 'POST',
-                    body: data,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-
-                if (response.ok) {
-                    rsvpForm.style.display = 'none';
-                    confirmationMsg.style.display = 'block';
-                } else {
-                    alert('Nagka-error sa pagpapadala. Paki-check ang Formspree activation email o subukan ulit.');
-                    submitBtn.innerText = 'Submit Response';
-                    submitBtn.disabled = false;
-                }
-            } catch (error) {
-                alert('Connection error. Subukan ulit.');
-                submitBtn.innerText = 'Submit Response';
-                submitBtn.disabled = false;
-            }
-        });
-    </script>
 </body>
 </html>
