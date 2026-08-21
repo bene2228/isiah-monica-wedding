@@ -217,7 +217,7 @@
             gap: 2.2rem;
         }
 
-        /* EXACT 2x2 GRID PARA SA THE FINER DETAILS */
+        /* Strict 2x2 Grid Layout */
         .finer-details-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -499,12 +499,12 @@
             background-color: var(--sky-bg);
         }
 
-        /* Floating Side Monograms */
+        /* Floating Side Monograms - 2X BIGGER (480px) */
         .side-monogram {
             position: fixed;
             top: 50%;
             transform: translateY(-50%);
-            width: 240px;
+            width: 480px; /* Doubled size */
             height: auto;
             opacity: 0.35;
             mix-blend-mode: multiply;
@@ -512,14 +512,14 @@
             z-index: 1;
         }
 
-        .side-monogram.left { left: 1.5rem; }
-        .side-monogram.right { right: 1.5rem; }
+        .side-monogram.left { left: 0.5rem; }
+        .side-monogram.right { right: 0.5rem; }
 
-        @media (max-width: 1600px) {
-            .side-monogram { width: 170px; }
+        @media (max-width: 1800px) {
+            .side-monogram { width: 300px; }
         }
 
-        @media (max-width: 1350px) {
+        @media (max-width: 1400px) {
             .side-monogram { display: none; }
         }
 
@@ -540,7 +540,7 @@
 </head>
 <body>
 
-    <!-- Floating Side Monograms -->
+    <!-- Floating Side Monograms (2x Bigger) -->
     <img src="monogram.jpg" alt="Monogram Left" class="side-monogram left">
     <img src="monogram.jpg" alt="Monogram Right" class="side-monogram right">
 
@@ -659,7 +659,7 @@
 
     <div class="divider"></div>
 
-    <!-- The Finer Details Section (Strict 2x2 Grid) -->
+    <!-- The Finer Details Section (2x2 Grid) -->
     <section class="section fade-in-section">
         <h2 class="section-title">The Finer Details</h2>
         <p class="section-subtitle serif">Important notes for our special day</p>
@@ -759,7 +759,7 @@
                 <div id="confirmationMessage" style="display: none; text-align: center; padding: 2rem;">
                     <h3 class="serif" style="font-size: 2.4rem; color: #0c4a6e;">RSVP Received! 🎉</h3>
                     <p style="color: #0284c7; font-weight: 600; margin-top: 0.8rem; line-height: 1.6; font-size: 1.05rem;">
-                        We can'wait to celebrate with you! A confirmation email with the names of everyone in your RSVP party will be sent to your email address.
+                        We can't wait to celebrate with you! A confirmation email with the names of everyone in your RSVP party will be sent to your email address.
                     </p>
                 </div>
 
@@ -770,9 +770,9 @@
         </section>
     </div>
 
-    <!-- Footer -->
+    <!-- Footer Monogram (2x Bigger: 400px) -->
     <footer class="fade-in-section">
-        <img src="monogram.jpg" alt="Emmanuel & Monica Monogram" style="width: 200px; height: auto; mix-blend-mode: multiply; margin-bottom: 0.8rem;">
+        <img src="monogram.jpg" alt="Emmanuel & Monica Monogram" style="width: 400px; height: auto; mix-blend-mode: multiply; margin-bottom: 0.8rem;">
         
         <p class="serif" style="font-size: 1.6rem; color: #0c4a6e; margin-bottom: 0.3rem;">Emmanuel & Monica</p>
         <p>We can't wait to celebrate with you!</p>
