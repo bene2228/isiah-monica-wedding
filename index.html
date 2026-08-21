@@ -223,6 +223,12 @@
             gap: 2rem;
         }
 
+        .grid-four {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+        }
+
         .card {
             background: var(--sky-card);
             padding: 2.5rem 2rem;
@@ -494,6 +500,26 @@
             background-color: var(--sky-bg);
         }
 
+        /* Floating Side Monograms */
+        .side-monogram {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 120px;
+            height: auto;
+            opacity: 0.35;
+            mix-blend-mode: multiply;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .side-monogram.left { left: 2rem; }
+        .side-monogram.right { right: 2rem; }
+
+        @media (max-width: 1250px) {
+            .side-monogram { display: none; }
+        }
+
         @media (max-width: 600px) {
             .section { padding: 3rem 1rem; }
             .names { font-size: 2.8rem; }
@@ -510,6 +536,10 @@
     </style>
 </head>
 <body>
+
+    <!-- Floating Side Monograms -->
+    <img src="monogram.jpg" alt="Monogram Left" class="side-monogram left">
+    <img src="monogram.jpg" alt="Monogram Right" class="side-monogram right">
 
     <!-- Header Section -->
     <header class="hero">
@@ -740,11 +770,11 @@
     </div>
 
     <footer class="fade-in-section">
-    <!-- Monogram Logo sa Footer -->
-    <img src="monogram.jpg" alt="Emmanuel & Monica Monogram" style="width: 100px; height: auto; mix-blend-mode: multiply; margin-bottom: 0.8rem;">
-    
-    <p class="serif" style="font-size: 1.4rem; color: #0c4a6e; margin-bottom: 0.3rem;">Emmanuel & Monica</p>
-    <p>We can't wait to celebrate with you!</p>
+        <!-- Monogram Logo sa Footer -->
+        <img src="monogram.jpg" alt="Emmanuel & Monica Monogram" style="width: 100px; height: auto; mix-blend-mode: multiply; margin-bottom: 0.8rem;">
+        
+        <p class="serif" style="font-size: 1.4rem; color: #0c4a6e; margin-bottom: 0.3rem;">Emmanuel & Monica</p>
+        <p>We can't wait to celebrate with you!</p>
     </footer>
 
     <script>
