@@ -223,9 +223,10 @@
             gap: 2rem;
         }
 
+        /* 2x2 Grid para sa Finer Details Section */
         .grid-four {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
         }
 
@@ -505,7 +506,7 @@
             position: fixed;
             top: 50%;
             transform: translateY(-50%);
-            width: 120px;
+            width: 220px;
             height: auto;
             opacity: 0.35;
             mix-blend-mode: multiply;
@@ -513,10 +514,10 @@
             z-index: 1;
         }
 
-        .side-monogram.left { left: 2rem; }
-        .side-monogram.right { right: 2rem; }
+        .side-monogram.left { left: 1.5rem; }
+        .side-monogram.right { right: 1.5rem; }
 
-        @media (max-width: 1250px) {
+        @media (max-width: 1450px) {
             .side-monogram { display: none; }
         }
 
@@ -532,6 +533,7 @@
             .form-container { padding: 1.5rem 1.25rem; }
             .radio-group { flex-direction: column; gap: 0.8rem; }
             .radio-label { white-space: normal; }
+            .grid-four { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -656,7 +658,7 @@
 
     <div class="divider"></div>
 
-   <!-- The Finer Details Section -->
+   <!-- The Finer Details Section (Now 2x2 Grid) -->
     <section class="section fade-in-section">
         <h2 class="section-title">The Finer Details</h2>
         <p class="section-subtitle serif">Important notes for our special day</p>
@@ -754,7 +756,6 @@
                     <button type="submit" id="submitBtn" class="btn-submit">Submit Response</button>
                 </form>
 
-                <!-- UPDATED CONFIRMATION MESSAGE HERE -->
                 <div id="confirmationMessage" style="display: none; text-align: center; padding: 2rem;">
                     <h3 class="serif" style="font-size: 2.2rem; color: #0c4a6e;">RSVP Received! 🎉</h3>
                     <p style="color: #0284c7; font-weight: 600; margin-top: 0.8rem; line-height: 1.6;">
@@ -771,7 +772,7 @@
 
     <footer class="fade-in-section">
         <!-- Monogram Logo sa Footer -->
-        <img src="monogram.jpg" alt="Emmanuel & Monica Monogram" style="width: 100px; height: auto; mix-blend-mode: multiply; margin-bottom: 0.8rem;">
+        <img src="monogram.jpg" alt="Emmanuel & Monica Monogram" style="width: 140px; height: auto; mix-blend-mode: multiply; margin-bottom: 0.8rem;">
         
         <p class="serif" style="font-size: 1.4rem; color: #0c4a6e; margin-bottom: 0.3rem;">Emmanuel & Monica</p>
         <p>We can't wait to celebrate with you!</p>
