@@ -45,7 +45,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 3rem 1rem;
+            padding: 4rem 1.5rem;
             background: linear-gradient(180deg, rgba(224, 242, 254, 0.75) 0%, rgba(224, 242, 254, 0.88) 100%), url('photo5.jpg');
             background-size: cover;
             background-position: center;
@@ -73,7 +73,7 @@
         }
 
         .subtitle {
-            font-size: 1rem;
+            font-size: 1.1rem;
             letter-spacing: 3px;
             text-transform: uppercase;
             color: var(--sky-accent);
@@ -82,14 +82,14 @@
         }
 
         .names {
-            font-size: 3.8rem;
+            font-size: 4.5rem;
             color: var(--sky-dark);
             margin-bottom: 0.8rem;
             line-height: 1.1;
         }
 
         .date-location {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: var(--text-muted);
             font-weight: 600;
             margin-bottom: 2rem;
@@ -98,13 +98,13 @@
         /* Countdown */
         .countdown {
             display: flex;
-            gap: 1.2rem;
-            background: rgba(255, 255, 255, 0.9);
+            gap: 1.5rem;
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(5px);
-            padding: 1rem 1.8rem;
+            padding: 1.2rem 2.2rem;
             border-radius: 50px;
             border: 1px solid var(--sky-border);
-            box-shadow: 0 4px 15px rgba(2, 132, 199, 0.15);
+            box-shadow: 0 6px 20px rgba(2, 132, 199, 0.15);
         }
 
         .time-box {
@@ -115,13 +115,13 @@
 
         .number {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             font-weight: 700;
             color: var(--sky-dark);
         }
 
         .label {
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             letter-spacing: 1px;
             text-transform: uppercase;
             color: var(--sky-accent);
@@ -143,29 +143,29 @@
 
         /* Section Settings */
         .section {
-            max-width: 1000px;
+            max-width: 1250px;
             margin: 0 auto;
-            padding: 4rem 1.5rem;
+            padding: 4.5rem 2rem;
             text-align: center;
         }
 
         .section-title {
-            font-size: 2.8rem;
+            font-size: 3.2rem;
             color: var(--sky-dark);
             margin-bottom: 0.5rem;
         }
 
         .section-subtitle {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: var(--text-muted);
-            margin-bottom: 2.5rem;
+            margin-bottom: 3rem;
             font-weight: 500;
         }
 
         .divider {
             height: 2px;
             background: linear-gradient(90deg, transparent, var(--sky-border), transparent);
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
@@ -173,14 +173,14 @@
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
+            gap: 1.8rem;
         }
 
         .gallery-item {
             overflow: hidden;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(2, 132, 199, 0.12);
-            border: 3px solid #ffffff;
+            border-radius: 14px;
+            box-shadow: 0 8px 25px rgba(2, 132, 199, 0.12);
+            border: 4px solid #ffffff;
             background-color: #cbd5e1;
             transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
@@ -203,58 +203,55 @@
 
         .gallery-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(2, 132, 199, 0.2);
+            box-shadow: 0 12px 28px rgba(2, 132, 199, 0.2);
         }
 
         .gallery-item img:hover {
             transform: scale(1.08);
         }
 
-        /* Cards Layout */
+        /* Schedule Layout */
         .grid-two {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.2rem;
         }
 
-        .grid-three {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        /* 2x2 Grid para sa Finer Details Section */
-        .grid-four {
+        /* EXACT 2x2 GRID PARA SA THE FINER DETAILS */
+        .finer-details-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
+            max-width: 950px;
+            margin: 0 auto;
         }
 
         .card {
             background: var(--sky-card);
-            padding: 2.5rem 2rem;
-            border-radius: 16px;
+            padding: 2.8rem 2.2rem;
+            border-radius: 18px;
             border: 2px solid var(--sky-border);
             box-shadow: 0 10px 25px rgba(2, 132, 199, 0.08);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
         }
 
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(2, 132, 199, 0.15);
+            box-shadow: 0 15px 32px rgba(2, 132, 199, 0.15);
         }
 
         .card h3 {
-            font-size: 2rem;
+            font-size: 2.1rem;
             color: var(--sky-dark);
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem;
         }
 
         .card .time {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-weight: 700;
             color: var(--sky-accent);
             margin-bottom: 0.8rem;
@@ -262,20 +259,20 @@
 
         .card p {
             color: var(--text-muted);
-            font-size: 0.95rem;
+            font-size: 1.02rem;
             font-weight: 500;
-            line-height: 1.6;
+            line-height: 1.65;
         }
 
         .btn-map {
             display: inline-block;
             margin-top: 1.5rem;
-            padding: 0.75rem 1.5rem;
+            padding: 0.85rem 1.8rem;
             background-color: var(--sky-accent);
             color: #ffffff;
             text-decoration: none;
             border-radius: 8px;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             letter-spacing: 1.5px;
             text-transform: uppercase;
             font-weight: 600;
@@ -290,8 +287,8 @@
         /* Attire Styling */
         .attire-card {
             background: var(--sky-card);
-            padding: 2.5rem;
-            border-radius: 16px;
+            padding: 3rem;
+            border-radius: 18px;
             border: 2px solid var(--sky-border);
             box-shadow: 0 10px 25px rgba(2, 132, 199, 0.08);
         }
@@ -299,13 +296,13 @@
         .attire-details {
             display: flex;
             justify-content: center;
-            gap: 3rem;
-            margin-top: 1.5rem;
-            margin-bottom: 1.5rem;
+            gap: 4rem;
+            margin-top: 1.8rem;
+            margin-bottom: 1.8rem;
         }
 
         .attire-column h4 {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             letter-spacing: 1.5px;
             text-transform: uppercase;
             color: var(--sky-dark);
@@ -315,13 +312,14 @@
 
         .attire-column p {
             color: var(--text-muted);
+            font-size: 1.05rem;
             font-weight: 500;
         }
 
         /* Color Palette Swatches */
         .color-palette-title {
-            margin-top: 1.5rem;
-            font-size: 0.85rem;
+            margin-top: 1.8rem;
+            font-size: 0.95rem;
             letter-spacing: 2px;
             text-transform: uppercase;
             color: var(--sky-dark);
@@ -332,15 +330,15 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 1rem;
-            margin: 1rem 0 2rem 0;
+            gap: 1.2rem;
+            margin: 1.2rem 0 2.2rem 0;
         }
 
         .swatch {
-            width: 42px;
-            height: 42px;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
-            border: 2px solid #ffffff;
+            border: 3px solid #ffffff;
             box-shadow: 0 4px 10px rgba(0,0,0,0.12);
             transition: transform 0.3s ease;
         }
@@ -353,10 +351,10 @@
         .attire-inspo-container {
             background: #fafafa;
             padding: 1.2rem;
-            border-radius: 12px;
+            border-radius: 14px;
             border: 1px solid var(--sky-border);
             display: inline-block;
-            max-width: 750px;
+            max-width: 850px;
             width: 100%;
             margin-top: 0.5rem;
             box-shadow: inset 0 0 10px rgba(0,0,0,0.02);
@@ -377,23 +375,23 @@
         }
 
         .form-container {
-            max-width: 550px;
+            max-width: 650px;
             margin: 0 auto;
             background: var(--sky-card);
-            padding: 2.5rem;
-            border-radius: 16px;
+            padding: 3rem;
+            border-radius: 18px;
             border: 2px solid var(--sky-border);
             box-shadow: 0 10px 30px rgba(2, 132, 199, 0.1);
             text-align: left;
         }
 
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.8rem;
         }
 
         label {
             display: block;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             letter-spacing: 1px;
             text-transform: uppercase;
             margin-bottom: 0.5rem;
@@ -402,7 +400,7 @@
         }
 
         .field-help {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             color: var(--text-muted);
             margin-bottom: 0.5rem;
             display: block;
@@ -411,7 +409,7 @@
 
         input, select, textarea {
             width: 100%;
-            padding: 0.85rem;
+            padding: 0.95rem;
             border: 1px solid var(--sky-border);
             border-radius: 8px;
             font-family: inherit;
@@ -431,7 +429,7 @@
         .radio-group {
             display: flex;
             flex-wrap: wrap;
-            gap: 1.2rem;
+            gap: 1.5rem;
             margin-top: 0.5rem;
         }
 
@@ -439,7 +437,7 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            font-size: 0.95rem;
+            font-size: 1rem;
             cursor: pointer;
             color: var(--text-main);
             font-weight: 600;
@@ -453,13 +451,13 @@
 
         button.btn-submit {
             width: 100%;
-            padding: 1rem;
+            padding: 1.1rem;
             background-color: var(--sky-accent);
             color: white;
             border: none;
             border-radius: 8px;
             font-family: 'Montserrat', sans-serif;
-            font-size: 0.95rem;
+            font-size: 1rem;
             letter-spacing: 2px;
             text-transform: uppercase;
             font-weight: 700;
@@ -474,13 +472,13 @@
 
         .rsvp-note {
             text-align: center;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             color: var(--text-muted);
-            margin-top: 1.5rem;
+            margin-top: 1.8rem;
             border-top: 1px dashed var(--sky-border);
-            padding-top: 1rem;
+            padding-top: 1.2rem;
             font-weight: 500;
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
         .rsvp-note a {
@@ -495,8 +493,8 @@
 
         footer {
             text-align: center;
-            padding: 3rem 1rem;
-            font-size: 0.9rem;
+            padding: 3.5rem 1rem;
+            font-size: 0.95rem;
             color: var(--text-muted);
             background-color: var(--sky-bg);
         }
@@ -506,7 +504,7 @@
             position: fixed;
             top: 50%;
             transform: translateY(-50%);
-            width: 220px;
+            width: 240px;
             height: auto;
             opacity: 0.35;
             mix-blend-mode: multiply;
@@ -517,23 +515,26 @@
         .side-monogram.left { left: 1.5rem; }
         .side-monogram.right { right: 1.5rem; }
 
-        @media (max-width: 1450px) {
+        @media (max-width: 1600px) {
+            .side-monogram { width: 170px; }
+        }
+
+        @media (max-width: 1350px) {
             .side-monogram { display: none; }
         }
 
-        @media (max-width: 600px) {
-            .section { padding: 3rem 1rem; }
-            .names { font-size: 2.8rem; }
-            .countdown { gap: 0.6rem; padding: 0.8rem 1rem; }
-            .number { font-size: 1.5rem; }
-            .attire-card { padding: 1.5rem 1rem; }
-            .attire-details { flex-direction: column; gap: 1.2rem; }
-            .gallery-grid { gap: 0.75rem; }
-            .attire-inspo-container { padding: 0.5rem; }
-            .form-container { padding: 1.5rem 1.25rem; }
+        @media (max-width: 768px) {
+            .finer-details-grid { grid-template-columns: 1fr; }
+            .section { padding: 3.5rem 1.2rem; }
+            .names { font-size: 3.2rem; }
+            .countdown { gap: 0.8rem; padding: 0.9rem 1.2rem; }
+            .number { font-size: 1.8rem; }
+            .attire-card { padding: 2rem 1.2rem; }
+            .attire-details { flex-direction: column; gap: 1.5rem; }
+            .gallery-grid { gap: 1rem; }
+            .form-container { padding: 2rem 1.5rem; }
             .radio-group { flex-direction: column; gap: 0.8rem; }
             .radio-label { white-space: normal; }
-            .grid-four { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -618,8 +619,8 @@
     <section class="section fade-in-section">
         <h2 class="section-title">Dress Code</h2>
         <div class="attire-card">
-            <h3 class="serif" style="font-size: 2.2rem; color: var(--sky-dark); margin-bottom: 0.5rem;">Semi-Formal / Muted Pastel & Blue Attire</h3>
-            <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto; font-weight: 500;">
+            <h3 class="serif" style="font-size: 2.4rem; color: var(--sky-dark); margin-bottom: 0.5rem;">Semi-Formal / Muted Pastel & Blue Attire</h3>
+            <p style="color: var(--text-muted); max-width: 700px; margin: 0 auto; font-weight: 500; font-size: 1.05rem;">
                 Kindly wear semi-formal attire in these muted pastel and blue color tones.
             </p>
 
@@ -658,12 +659,12 @@
 
     <div class="divider"></div>
 
-   <!-- The Finer Details Section (Now 2x2 Grid) -->
+    <!-- The Finer Details Section (Strict 2x2 Grid) -->
     <section class="section fade-in-section">
         <h2 class="section-title">The Finer Details</h2>
         <p class="section-subtitle serif">Important notes for our special day</p>
 
-        <div class="grid-four">
+        <div class="finer-details-grid">
             <div class="card">
                 <div>
                     <h3>Gift Guide</h3>
@@ -711,7 +712,6 @@
             <div class="form-container">
                 <form id="rsvpForm" action="https://formspree.io/f/mppaqdlz" method="POST">
                     
-                    <!-- Guest Count (1 to 5 Options) -->
                     <div class="form-group">
                         <label for="guestCount">NUMBER OF GUEST(S) ATTENDING</label>
                         <select id="guestCount" name="guestCount">
@@ -757,9 +757,9 @@
                 </form>
 
                 <div id="confirmationMessage" style="display: none; text-align: center; padding: 2rem;">
-                    <h3 class="serif" style="font-size: 2.2rem; color: #0c4a6e;">RSVP Received! 🎉</h3>
-                    <p style="color: #0284c7; font-weight: 600; margin-top: 0.8rem; line-height: 1.6;">
-                        We can't wait to celebrate with you! A confirmation email with the names of everyone in your RSVP party will be sent to your email address.
+                    <h3 class="serif" style="font-size: 2.4rem; color: #0c4a6e;">RSVP Received! 🎉</h3>
+                    <p style="color: #0284c7; font-weight: 600; margin-top: 0.8rem; line-height: 1.6; font-size: 1.05rem;">
+                        We can'wait to celebrate with you! A confirmation email with the names of everyone in your RSVP party will be sent to your email address.
                     </p>
                 </div>
 
@@ -770,11 +770,11 @@
         </section>
     </div>
 
+    <!-- Footer -->
     <footer class="fade-in-section">
-        <!-- Monogram Logo sa Footer -->
-        <img src="monogram.jpg" alt="Emmanuel & Monica Monogram" style="width: 140px; height: auto; mix-blend-mode: multiply; margin-bottom: 0.8rem;">
+        <img src="monogram.jpg" alt="Emmanuel & Monica Monogram" style="width: 200px; height: auto; mix-blend-mode: multiply; margin-bottom: 0.8rem;">
         
-        <p class="serif" style="font-size: 1.4rem; color: #0c4a6e; margin-bottom: 0.3rem;">Emmanuel & Monica</p>
+        <p class="serif" style="font-size: 1.6rem; color: #0c4a6e; margin-bottom: 0.3rem;">Emmanuel & Monica</p>
         <p>We can't wait to celebrate with you!</p>
     </footer>
 
